@@ -64,26 +64,43 @@
             android:layout_height="0dp"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="160dp"
-                android:layout_marginTop="40dp"
-                app:cardCornerRadius="50dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-                <ImageView
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/ima" />
-            </androidx.cardview.widget.CardView>
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ima" />
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:elevation="2dp"
+                    android:src="@drawable/edit"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:background="@color/white"
                 android:hint="Full Name"
                 android:textColorHint="@color/black"
-                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -91,7 +108,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -100,9 +117,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:background="@color/white"
                 android:hint="User Name"
                 android:textColorHint="@color/black"
-                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -110,7 +127,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -119,9 +136,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:background="@color/white"
                 android:hint="Age"
                 android:textColorHint="@color/black"
-                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -129,7 +146,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="number"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -138,9 +155,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:background="@color/white"
                 android:hint="Gender"
                 android:textColorHint="@color/black"
-                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -148,7 +165,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -157,9 +174,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:background="@color/white"
                 android:hint="Interest"
                 android:textColorHint="@color/black"
-                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -167,24 +184,25 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"                    android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
 
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recieve push notification"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
                     android:layout_weight="1"
+                    android:text="Recieve push notification"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.SwitchCompat
@@ -197,11 +215,11 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save"
-                android:textSize="18sp"
-                android:textColor="@color/white"
                 android:layout_marginTop="20dp"
-                android:background="@color/bg"/>
+                android:background="@color/bg"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
